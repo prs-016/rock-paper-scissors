@@ -1,0 +1,225 @@
+@font-face {
+  font-family: 'Crackman';
+  src: url('fonts/Crackman.otf') format('opentype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom right, #2c3e50, #4b6cb7);
+}
+
+.Description{
+    font-family: 'Old English Text MT';
+    font-size: 1.5rem;
+    color: rgb(155, 206, 53);
+    padding: 2rem;
+    text-align: center;
+    min-height: 3rem;
+    height:auto;
+}
+
+.header{
+    font-family: 'Crackman';
+    font-size: 3.5rem;
+    padding: 2.5rem;
+    background-color: aqua;
+    width: 100%;
+    text-align: center;
+    background: radial-gradient(circle, #ff6a00, #ee0979, #00c3ff);
+    font-weight: 500;
+  
+  
+}
+
+.Score{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Old English Text MT';
+    font-size: 1.5rem;
+    padding: 2rem;
+    text-align: center;
+    justify-content: space-evenly;
+    min-height: 3rem;
+    height:auto;
+    flex: 1;
+    margin-bottom: 3rem;
+}
+
+.Wins{
+    color: rgba(1, 234, 1, 0.793)
+}
+
+.Ties{
+    color: rgb(255, 255, 0);
+}
+
+.Losses{
+    color: rgb(250, 57, 57);
+}
+
+.pvp{
+    display: flex;
+    flex-direction: column;
+}
+
+.eachchoice{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.Player_Choice, .Computer_Choice {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Player_Logo, .Computer_Logo{
+    width: 8rem;
+    height: 8rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4.5rem;
+    border: 5px solid #2b9be5;
+    box-shadow: 0 0 1rem rgba(78, 184, 255, 0.74);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.Computer_Logo{
+    border: 5px solid #ff0000;
+    box-shadow: 0 0 1rem rgb(240, 78, 78);
+}
+
+.Player_text, .Computer_text {
+    text-align: center;
+    font-family: Trebuchet MS;
+    font-weight: bolder;
+    font-size: 1.25rem;
+}
+
+.outcome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap:1rem;
+}
+
+.win_loss{
+    font-size: 3rem;
+    background-clip: text;
+    background: radial-gradient(circle, #ff6a00, #ee0979, #00c3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.why{
+    font-size:1.5rem;
+    background-clip: text;
+    background: radial-gradient(circle, #ff6a00, #ee0979, #00c3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.choice{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5rem;
+}
+
+button{
+    min-height: 5rem;
+    min-width: 5rem;
+    margin:0px;
+    padding:0px;
+    border: 0px;
+    font-size: 5rem;
+    background-color: transparent;
+    cursor: pointer;
+    transition: color 2s ease, transform 0.2s ease, cursor 0.2s ease;
+}
+button:hover {
+  transform: scale(1.05);    
+}
+button:active {
+  transform: scale(0.98) rotate(360deg); 
+   transition: transform 2.5s ease-in, transform 2.5s ease-out;
+  cursor: wait; 
+
+}
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5); /* custom focus ring */
+}
+
+.footer{
+    background: radial-gradient(circle, #ff6a00, #ee0978d9, #00c3ff);
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.copyright{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+}
+
+.copytext{
+    color:black;
+    font-family: 'Crackman';
+    font-size: 1.25rem;
+}
+
+.github{
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    object-fit: cover;       
+    overflow: hidden;
+    justify-content: center;
+    border-radius: 50%;
+    align-items: center;
+    margin: 0px;
+    
+    
+}
+.github img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 1.75s ease;
+  flex-shrink:0;
+}
+.github img:hover{
+    transform: scale(1.2) rotate(180deg);
+    transition: transform 0.3s ease-in, transform 2.5s ease-out;
+}
+
+
+ul{
+    list-style: none;
+}
+
