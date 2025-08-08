@@ -3,7 +3,20 @@ let ties=0;
 let losses=0;
 
 let emoji={'Rock': '🗿', 'Paper':'📝','Scissors':'✂️','Default':'❓'};
+const gamemusic = document.getElementById("gamemusic");
+const game_lost = document.getElementById("game_lost");
+const game_won = document.getElementById("game_won");
 
+document.addEventListener("visibilitychange", () =>
+    {
+        if (document.hidden) 
+        {
+            gamemusic.pause();}
+        else 
+        {
+            gamemusic.play();
+        }
+});
 const getcompchoice = () => ['Rock','Paper','Scissors'][Math.floor(Math.random()*3)];//math.random returns [0,1) so index 3 not possible
 const gameover = () =>wins==5||losses==5?true:false;
 document.querySelectorAll('.choice button').forEach(button => {
@@ -53,11 +66,18 @@ function playround(compchoice,playerchoice)
         {
             document.querySelector(".win_loss").textContent = "NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO";
             document.querySelector(".why").textContent = `HOW HAS THIS HAPPENED I HAVE FAILED MY CREATOR`;
+            gamemusic.pause();
+            game_won.currentTime = 0;
+            game_won.play();
+
         }
         else
         {
             document.querySelector(".win_loss").textContent = "LOSER!LOSER!LOSER!LOSER!LOSER!";
             document.querySelector(".why").textContent = `HAHAHHAHAHAHAHAHAHAHHAHAHAHHAHAHHAHAHAHHAHAHAHAAH`;
+            gamemusic.pause();
+            game_lost.currentTime = 0;
+            game_lost.play();
         }
         setTimeout(() => {
             alert(wins==5 ? "Congratulations! You Won! Thanks for playing. Close Prompt to play again!":"HAHAHAHA LOSER YOU LOST! I HAD NO EXPECTATIONS LMAO! ClOSE PROMPT TO TRY AGAIN!"
@@ -72,6 +92,11 @@ function playround(compchoice,playerchoice)
             document.querySelector(".Computer_text").textContent = `Computer Choice?`;
             document.querySelector(".Computer_Logo").textContent = emoji['Default'];
             document.querySelector(".Player_Logo").textContent = emoji['Default'];
+            game_lost.pause();
+            game_won.pause();
+            game_won.currentTime = 0;
+            game_lost.currentTime = 0;
+            gamemusic.play();
         }, 0);
     }
 }
